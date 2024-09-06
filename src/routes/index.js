@@ -11,6 +11,11 @@ router.get('/',(req,res,next)=>{
 
 // router.get('/',faviconError,control.getData)
 router.get('/:i',control.getDataParams)
+router.get('/p/p',(req,res)=>{
+  const data = req.user ? req.user.id:"No logueado"
+  console.log("id usuario: "+data)
+  res.send("Pagina de prueba, vaya vea consola")
+})
 router.get('/auth/login',(req,res)=>res.render('login'))
 router.post('/',control.newData)
 router.post('/:i',control.newDataParams)
@@ -20,5 +25,11 @@ router.post('/auth/post',passport.authenticate('local',{
   successRedirect:'/',
   failureRedirect:'/auth/login'
 }))
+
+  router.get('/auth/logout', (req, res, next) => {
+    req.logout(err => {
+      err ? next(err):res.redirect('/auth/login')
+    })
+  })
 
 module.exports = router
