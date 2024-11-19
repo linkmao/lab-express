@@ -1,0 +1,22 @@
+{
+  "name": "lab-express",
+  "version": "1.0.0",
+  "description": "Esta es la version del mes de noviembre de 2024",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./src/index.js"
+  },
+  "keywords": [
+    "maolink",
+    "dev"
+  ],
+  "author": "maolink",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
