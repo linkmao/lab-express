@@ -9,6 +9,8 @@ router.get('/maolink',(req,res)=>{res.send("y esta es la pagina principal de mao
 router.put('/',(req,res)=>{
  const {name, age}=req.body
  console.log(name)
- res.status(200)
-})
+ console.log(process.env.mi_variable)
+ res.send("ok")
+}
+)
 module.exports= router
